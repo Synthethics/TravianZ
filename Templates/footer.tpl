@@ -22,7 +22,7 @@
         <div class="footer-menu">
             <center><br />
             <div class="copyright">&copy; 2010 - <?php echo date('Y') . ' ' . (defined('SERVER_NAME') ? SERVER_NAME : 'TravianZ');?> All rights reserved</div>
-            <div class="copyright">Server running on: <a href="version.php"><b><font color="Red">v.8.3.5</font></b></a>
+            <div class="copyright">Server running on: <a href="https://github.com/Synthethics/TravianZ/blob/master/README.md"><b><font color="Red">v.8.5</font></b></a>
             </div>
         </div>
     </div></center>

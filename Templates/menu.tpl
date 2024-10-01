@@ -43,6 +43,7 @@ div.c1 {text-align: center}
                     echo "<a href=\"Admin/admin.php\"><font color=\"Blue\">Multihunter Panel</font></a>";
                     } ?> <?php if($session->access == ADMIN) {
                     echo "<a href=\"Admin/admin.php\"><font color=\"Red\">".ADMIN_PANEL."</font></a>";
+                    echo "<a href=\"grant_gold.php\"><font color=\"Orange\">Grant Gold</font></a>";
                     echo "<a href=\"massmessage.php\">".MASS_MESSAGE."</a>";
                     echo "<a href=\"sysmsg.php\">".SYSTEM_MESSAGE."</a>";
                     } ?> <a href="logout.php"><?php echo LOGOUT;?></a></p>

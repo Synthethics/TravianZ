@@ -17,7 +17,7 @@
 [![Twitter URL](https://img.shields.io/twitter/url/http/shields.io.svg?style=social)](https://twitter.com/cata7007)
 ======
 
-TravianZ Version **v.8.4**
+TravianZ Version **v8.4** - Edited by Synthethics
 ======
 **Note:** this game is still in a pre-release state, although at this point it is very playable, tested and found to be fairly stable
 
@@ -78,10 +78,11 @@ Thanks guys, you're awesome :)
 
 This should be added into the Database for the grant_gold.php to work. The grant_gold.php enables users to give themselves up to 50 gold per 24 hours.
 
+```
 CREATE TABLE `gold_transactions` (
   `id` int(11) NOT NULL,
   `username` varchar(50) NOT NULL,
   `gold_granted` int(11) NOT NULL,
   `grant_time` timestamp NOT NULL DEFAULT current_timestamp()
 )
-
+```

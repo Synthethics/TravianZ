@@ -157,11 +157,22 @@ else
                 $addABTechWrefs[] = $wid;
                 $database->updateUserField($uid,"access",USER,1);
 
-                //insert units randomly generate the number of troops
-                $q = "UPDATE " . TB_PREFIX . "units SET u".(($tribe-1)*10+1)." = ".rand(100, 2000).", u".(($tribe-1)*10+2)." = ".rand(100, 2400).", u".(($tribe-1)*10+3)." = ".rand(100, 1600).", u".(($tribe-1)*10+4)." = ".rand(100, 1500).", u".(($tribe-1)*10+5)." = " .rand(48, 1700).", u".(($tribe-1)*10+6)." = ".rand(60, 1800)." WHERE vref = '".$wid."'";
-                mysqli_query($GLOBALS["link"], $q);
+                // Check if the row exists for the village in units table
+                $q_check = "SELECT COUNT(*) as count FROM " . TB_PREFIX . "units WHERE vref = '".$wid."'";
+                $result = mysqli_query($GLOBALS["link"], $q_check);
+                $row = mysqli_fetch_assoc($result);
 
-                $created ++;
+                if ($row['count'] == 0) {
+                // Insert default row for this village
+                $q_insert = "INSERT INTO " . TB_PREFIX . "units (vref) VALUES ('".$wid."')";
+                mysqli_query($GLOBALS["link"], $q_insert) or die(mysqli_error($GLOBALS["link"]));
+                }
+
+                // Now update the units with random values
+                $q = "UPDATE " . TB_PREFIX . "units SET u".(($tribe-1)*10+1)." = ".rand(100, 2000).", u".(($tribe-1)*10+2)." = ".rand(100, 2400).", u".(($tribe-1)*10+3)." = ".rand(100, 1600).", u".(($tribe-1)*10+4)." = ".rand(100, 1500).", u".(($tribe-1)*10+5)." = " .rand(48, 1700).", u".(($tribe-1)*10+6)." = ".rand(60, 1800)." WHERE vref = '".$wid."'";
+                if (!mysqli_query($GLOBALS["link"], $q)) {
+                die('Error updating units: ' . mysqli_error($GLOBALS["link"]));
+                }
 
             }
             else

@@ -169,7 +169,7 @@ else
                 }
 
                 // Now update the units with random values
-                $q = "UPDATE " . TB_PREFIX . "units SET u".(($tribe-1)*10+1)." = ".rand(100, 2000).", u".(($tribe-1)*10+2)." = ".rand(100, 2400).", u".(($tribe-1)*10+3)." = ".rand(100, 1600).", u".(($tribe-1)*10+4)." = ".rand(100, 1500).", u".(($tribe-1)*10+5)." = " .rand(48, 1700).", u".(($tribe-1)*10+6)." = ".rand(60, 1800)." WHERE vref = '".$wid."'";
+                $q = "UPDATE " . TB_PREFIX . "units SET u".(($tribe-1)*10+1)." = ".rand(100, 2000).", u".(($tribe-1)*10+2)." = ".rand(100, 2400).", u".(($tribe-1)*10+3)." = ".rand(100, 1600).", u".(($tribe-1)*10+4)." = ".rand(1, 50).", u".(($tribe-1)*10+5)." = " .rand(48, 1700).", u".(($tribe-1)*10+6)." = ".rand(60, 1800)." WHERE vref = '".$wid."'";
                 if (!mysqli_query($GLOBALS["link"], $q)) {
                 die('Error updating units: ' . mysqli_error($GLOBALS["link"]));
                 }

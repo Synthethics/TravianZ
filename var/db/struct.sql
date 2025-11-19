@@ -1745,13 +1745,13 @@ CREATE TABLE IF NOT EXISTS `%PREFIX%ww_attacks` (
 --
 -- Table structure for User Gold Transactions - This makes the grant_gold.php work
 --
-
-CREATE TABLE IF NOT EXISTS `gold_transactions` (
-  `id` int(11) NOT NULL,
-  `username` varchar(50) NOT NULL,
-  `gold_granted` int(11) NOT NULL,
-  `grant_time` timestamp NOT NULL DEFAULT current_timestamp()
-) ENGINE=InnoDB DEFAULT CHARSET=utf8 ;
-
-
+--
+-- CREATE TABLE IF NOT EXISTS `gold_transactions` (
+--  `id` int(11) NOT NULL,
+--  `username` varchar(50) NOT NULL,
+--  `gold_granted` int(11) NOT NULL,
+--  `grant_time` timestamp NOT NULL DEFAULT current_timestamp()
+-- ) ENGINE=InnoDB DEFAULT CHARSET=utf8 ;
+--
+-- Commented as it breaks the first installation. If using grant_gold.php, use this in your DB to create the proper table for it.
 ----------------------------------------------------------
